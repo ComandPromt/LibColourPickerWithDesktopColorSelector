@@ -83,7 +83,7 @@ public class ScreenColor extends javax.swing.JPanel {
 
 		add(btnNewButton);
 
-		JButton btnNewButton_1 = new JButton("Copy");
+		JButton btnNewButton_1 = new JButton("");
 
 		btnNewButton_1.setHorizontalAlignment(SwingConstants.LEFT);
 
@@ -162,7 +162,7 @@ public class ScreenColor extends javax.swing.JPanel {
 
 		add(btnNewButton);
 
-		JButton btnNewButton_1 = new JButton("Copy");
+		JButton btnNewButton_1 = new JButton("");
 
 		btnNewButton_1.setHorizontalAlignment(SwingConstants.LEFT);
 
