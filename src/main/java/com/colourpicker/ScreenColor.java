@@ -164,6 +164,8 @@ public class ScreenColor extends javax.swing.JPanel {
 
 		JButton btnNewButton_1 = new JButton("");
 
+		btnNewButton_1.setHorizontalAlignment(SwingConstants.CENTER);
+
 		btnNewButton_1.setFocusPainted(false);
 
 		btnNewButton_1.setBorder(null);
