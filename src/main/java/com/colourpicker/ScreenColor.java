@@ -31,6 +31,87 @@ public class ScreenColor extends javax.swing.JPanel {
 
 	public static JPanel color;
 
+	public ScreenColor(Color color) {
+
+		setBorder(new LineBorder(new Color(0, 0, 0)));
+
+		this.color = new JPanel();
+
+		this.color.setBackground(color);
+
+		this.color.setBorder(
+				new SoftBevelBorder(BevelBorder.LOWERED, Color.LIGHT_GRAY, Color.GRAY, Color.LIGHT_GRAY, Color.GRAY));
+
+		JButton btnNewButton = new JButton("");
+
+		btnNewButton.setFocusPainted(false);
+
+		btnNewButton.setBorder(null);
+
+		btnNewButton.setContentAreaFilled(false);
+
+		btnNewButton.setIcon(new ImageIcon(ScreenColor.class.getResource("/images/color_picker.png")));
+
+		btnNewButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				try {
+
+					picar = true;
+
+					t = new Timer();
+
+					MyTask mTask = new MyTask();
+
+					t.scheduleAtFixedRate(mTask, 0, 999999999);
+
+				}
+
+				catch (Exception e1) {
+
+				}
+
+			}
+
+		});
+
+		setLayout(new GridLayout(0, 3, 0, 0));
+
+		add(this.color);
+
+		add(btnNewButton);
+
+		JButton btnNewButton_1 = new JButton("Copy");
+
+		btnNewButton_1.setHorizontalAlignment(SwingConstants.LEFT);
+
+		btnNewButton_1.setFocusPainted(false);
+
+		btnNewButton_1.setBorder(null);
+
+		btnNewButton_1.setContentAreaFilled(false);
+
+		btnNewButton_1.setIcon(new ImageIcon(ScreenColor.class.getResource("/images/copy.png")));
+
+		btnNewButton_1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				Clipboard clipboard = getSystemClipboard();
+
+				clipboard.setContents(new StringSelection(getHtmlColor()), null);
+
+			}
+
+		});
+
+		add(btnNewButton_1);
+
+	}
+
 	public ScreenColor() {
 
 		setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -53,7 +134,6 @@ public class ScreenColor extends javax.swing.JPanel {
 		btnNewButton.addActionListener(new ActionListener() {
 
 			@Override
-
 			public void actionPerformed(ActionEvent e) {
 
 				try {
@@ -83,6 +163,7 @@ public class ScreenColor extends javax.swing.JPanel {
 		add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("Copy");
+
 		btnNewButton_1.setHorizontalAlignment(SwingConstants.LEFT);
 
 		btnNewButton_1.setFocusPainted(false);
@@ -96,7 +177,6 @@ public class ScreenColor extends javax.swing.JPanel {
 		btnNewButton_1.addActionListener(new ActionListener() {
 
 			@Override
-
 			public void actionPerformed(ActionEvent e) {
 
 				Clipboard clipboard = getSystemClipboard();
