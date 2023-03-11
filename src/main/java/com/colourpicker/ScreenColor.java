@@ -29,7 +29,7 @@ public class ScreenColor extends javax.swing.JPanel {
 
 	public static boolean picar;
 
-	public static JPanel color;
+	private static JPanel color;
 
 	public ScreenColor(Color color) {
 
@@ -215,7 +215,7 @@ public class ScreenColor extends javax.swing.JPanel {
 
 	public Color getColor() {
 
-		return null;
+		return color.getBackground();
 
 	}
 
