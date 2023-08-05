@@ -1,9 +1,8 @@
 package com.colourpicker;
 
-import java.awt.AWTException;
 import java.util.TimerTask;
 
-public class MyTask extends TimerTask {
+class MyTask extends TimerTask {
 
 	@Override
 
@@ -15,7 +14,9 @@ public class MyTask extends TimerTask {
 
 		}
 
-		catch (AWTException e) {
+		catch (Exception e) {
+
+			e.printStackTrace();
 
 		}
 

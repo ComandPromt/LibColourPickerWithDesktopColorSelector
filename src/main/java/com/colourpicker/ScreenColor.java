@@ -19,7 +19,7 @@ import javax.swing.border.SoftBevelBorder;
 
 @SuppressWarnings("all")
 
-public class ScreenColor extends javax.swing.JPanel {
+public class ScreenColor extends JPanel {
 
 	public static Timer t;
 
@@ -29,7 +29,7 @@ public class ScreenColor extends javax.swing.JPanel {
 
 	public static boolean picar;
 
-	private static JPanel color;
+	public static JPanel color;
 
 	public ScreenColor(Color color) {
 
@@ -149,6 +149,8 @@ public class ScreenColor extends javax.swing.JPanel {
 				}
 
 				catch (Exception e1) {
+
+					e1.printStackTrace();
 
 				}
 

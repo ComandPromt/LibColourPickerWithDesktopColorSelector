@@ -1,9 +1,9 @@
 package com.colourpicker;
 
-import org.jnativehook.mouse.NativeMouseEvent;
-import org.jnativehook.mouse.NativeMouseListener;
+import com.github.kwhat.jnativehook.mouse.NativeMouseEvent;
+import com.github.kwhat.jnativehook.mouse.NativeMouseListener;
 
-public class MouseLogger implements NativeMouseListener {
+class MouseLogger implements NativeMouseListener {
 
 	@Override
 	public void nativeMouseClicked(NativeMouseEvent arg0) {
@@ -13,9 +13,19 @@ public class MouseLogger implements NativeMouseListener {
 	@Override
 	public void nativeMousePressed(NativeMouseEvent arg0) {
 
-		ScreenColor.picar = false;
+		try {
 
-		ColourPicker.cerrar();
+			ScreenColor.picar = false;
+
+			ColourPicker.cerrar();
+
+		}
+
+		catch (Exception e) {
+
+			e.printStackTrace();
+
+		}
 
 	}
 

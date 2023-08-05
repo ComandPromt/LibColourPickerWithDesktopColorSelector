@@ -23,12 +23,13 @@ import javax.swing.JPanel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import org.jnativehook.GlobalScreen;
-import org.jnativehook.NativeHookException;
+import com.github.kwhat.jnativehook.GlobalScreen;
+import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
+import com.github.kwhat.jnativehook.mouse.NativeMouseListener;
 
 @SuppressWarnings("all")
 
-public class ColourPicker extends JFrame implements ActionListener, ChangeListener {
+class ColourPicker extends JFrame implements ActionListener, ChangeListener {
 
 	public static Color colour;
 
@@ -37,7 +38,9 @@ public class ColourPicker extends JFrame implements ActionListener, ChangeListen
 	Robot robot;
 
 	public static Color getColour() {
+
 		return colour;
+
 	}
 
 	public static void main(String[] args) throws AWTException {
@@ -52,13 +55,15 @@ public class ColourPicker extends JFrame implements ActionListener, ChangeListen
 
 			GlobalScreen.unregisterNativeHook();
 
-		}
-
-		catch (NativeHookException e) {
+			frame.dispose();
 
 		}
 
-		frame.dispose();
+		catch (Exception e) {
+
+			e.printStackTrace();
+
+		}
 
 	}
 
@@ -76,9 +81,9 @@ public class ColourPicker extends JFrame implements ActionListener, ChangeListen
 
 			GlobalScreen.registerNativeHook();
 
-			GlobalScreen.addNativeMouseListener(new MouseLogger());
+			GlobalScreen.addNativeMouseListener((NativeMouseListener) new MouseLogger());
 
-			GlobalScreen.addNativeKeyListener(new KeyLogger(robot));
+			GlobalScreen.addNativeKeyListener((NativeKeyListener) new KeyLogger(robot));
 
 		}
 
@@ -160,10 +165,6 @@ public class ColourPicker extends JFrame implements ActionListener, ChangeListen
 				Thread.sleep(400);
 
 			}
-
-		}
-
-		catch (InterruptedException ex) {
 
 		}
 

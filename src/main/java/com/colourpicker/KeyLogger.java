@@ -2,8 +2,8 @@ package com.colourpicker;
 
 import java.awt.Robot;
 
-import org.jnativehook.keyboard.NativeKeyEvent;
-import org.jnativehook.keyboard.NativeKeyListener;
+import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
+import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
 
 public class KeyLogger implements NativeKeyListener {
 
@@ -93,20 +93,20 @@ public class KeyLogger implements NativeKeyListener {
 		}
 
 		catch (Exception e) {
+
 			e.printStackTrace();
+
 		}
 
 	}
 
 	@Override
 	public void nativeKeyReleased(NativeKeyEvent arg0) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void nativeKeyTyped(NativeKeyEvent arg0) {
-		// TODO Auto-generated method stub
 
 	}
 
